@@ -65,3 +65,4 @@ gem 'simple_form'
 gem 'faker'
 gem 'bundler'
 gem 'rake'
+gem 'dotenv-rails', groups: [:development, :test]
