@@ -1,10 +1,10 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1531387367216-681093c0279b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1432&q=80');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @cocktail.photo %>');">
 		<div class="banner-content">
 	    <h1><%= @cocktail.name %></h1>
 	    <% @doses.each do |dose| %>
 	    <h2> <%= dose.description  %> of <%= dose.ingredient.name %> <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, dose_path(dose),
       		method: :delete,
-      		data: { confirm: "Are you sure?" }  %></h2> 
+      		data: { confirm: "Are you sure?" }  %> <%= link_to "<i class='far fa-edit'></i>".html_safe, edit_cocktail_dose_path(@cocktail.id, dose.id) %></h2> 
         <% end %>  
 	    	
 	    <%= link_to new_cocktail_dose_path(@cocktail) do  %>
@@ -12,3 +12,6 @@
 		<% end %>
   	</div>
 </div>
+
+
+

@@ -1,5 +1,5 @@
 class DosesController < ApplicationController
-	before_action :set_dose, only: [:show, :edit, :destroy]
+	before_action :set_dose, only: [:show, :edit, :update,  :destroy]
  
   def show
   end
@@ -21,6 +21,12 @@ class DosesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    @dose.update(dose_params)
+
+    redirect_to cocktail_path(@dose.cocktail)
   end
 
   def destroy

@@ -48,3 +48,17 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
+.edit-btn {
+    position: absolute;
+    right: 5px;
+    font-size: 12px;
+    font-style: lighter;
+    opacity: 0.6;
+    z-index: 3;
+}
+
+.edit-btn:hover {
+    
+    opacity: 1;
+}
